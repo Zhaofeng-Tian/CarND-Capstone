@@ -35,8 +35,6 @@ Building ROS nodes for the self-driving car's communication and functionality im
 ### Successfully navigate the full track more than once.
 - The vehicle is able to complete more than one full loop of the track without running off road or any other navigational issues (incorrect turns, random stops, teleportation, etc.).
 
-Please use **one** of the two installation options, either native **or** docker installation.
-
 ## Installation Guidance
 ### Native Installation
 
