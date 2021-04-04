@@ -1,7 +1,43 @@
-This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car. For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
+# Final Project - Programming a Real Self-Driving Car
+[![Udacity - Self-Driving Car NanoDegree](https://s3.amazonaws.com/udacity-sdc/github/shield-carnd.svg)](http://www.udacity.com/drive)
+
+This is the project repo for the final project of the Udacity Self-Driving Car Nanodegree: Programming a Real Self-Driving Car, which is a project to implement a self-driving car system with ROS running in both simulator and Udacity’s self-driving car - Carla.
+For more information about the project, see the project introduction [here](https://classroom.udacity.com/nanodegrees/nd013/parts/6047fe34-d93c-4f50-8336-b70ef10cb4b2/modules/e1a23b06-329a-4684-a717-ad476f0d8dff/lessons/462c933d-9f24-42d3-8bdc-a08a5fc866e4/concepts/5ab4b122-83e6-436d-850f-9f4d26627fd9).
+![animation](images/auto.gif)
+## ROS Nodes Architecture
+Building ROS nodes for the self-driving car's communication and functionality implementation.
+![architrcture](images/graph.png)
+- waypoint generator
+
+![waypoint_node](images/waypoint_node.png)
+- Drive-by-wire & control
+
+![dbw](images/dbw_node.png)
+- traffic light detection
+
+![light](images/light_node.png)
+
+## Rubric Points
+
+### The code is built successfully and connects to the simulator.
+- Running catkin_make, source devel/setup.sh and roslaunch launch/styx.launch within the ros directory results in no errors and allows the program to connect to the simulator.
+### Waypoints are published to plan Carla’s route around the track.
+- Waypoints are published to /final_waypoints to plan the vehicle’s path around the track. No unnecessary moves (excessive lane changes, unnecessary turning, unprompted stops) occur.
+
+- As in the Path Planning project, acceleration does not exceed 10 m/s^2 and jerk does not exceed 10 m/s^3.
+
+- Have limited the top speed of the vehicle to the km/h velocity set by the velocity rosparam in waypoint_loader.
+
+### Controller commands are published to operate Carla’s throttle, brake, and steering.
+- dbw_node.py has been implemented to calculate and provide appropriate throttle, brake, and steering commands.
+- The commands are published to /vehicle/throttle_cmd, /vehicle/brake_cmd and /vehicle/steering_cmd, as applicable.
+
+### Successfully navigate the full track more than once.
+- The vehicle is able to complete more than one full loop of the track without running off road or any other navigational issues (incorrect turns, random stops, teleportation, etc.).
 
 Please use **one** of the two installation options, either native **or** docker installation.
 
+## Installation Guidance
 ### Native Installation
 
 * Be sure that your workstation is running Ubuntu 16.04 Xenial Xerus or Ubuntu 14.04 Trusty Tahir. [Ubuntu downloads can be found here](https://www.ubuntu.com/download/desktop).
